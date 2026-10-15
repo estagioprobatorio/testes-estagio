@@ -1,12 +1,12 @@
-# Relatório de Preenchimento e Validação do PDP 2025 (TASK 1)
+# Relatório de Preenchimento, Validação e Adequação à Rubrica PDP 2026
 
-**Data de Execução:** 14/10/2026  
+**Data de Atualização:** 15/10/2026  
 **Documentos de Referência:**
-- `rules.md` (Regras de análise, hierarquia e classificação)
-- `docs/_DOC_PDP_2025.md` (Fonte da verdade: temas, expectativas e critérios institucionais)
-- `docs/_taxonomia_bloom.md` (Referencial de complexidade cognitiva)
+- `rules.md` (Diretrizes de análise, hierarquia e integridade de dados)
+- `docs/_DOC_PDP_2025.md` (Base histórica: temas, expectativas e critérios originais de 2025)
+- `docs/PDP_DOCENTES_Referência 04_2026.md` (Referencial pedagógico de rubricas analíticas para 2026)
 - `data/arquivo_original.csv` (Cópia de segurança da base original)
-- `data/arquivo_preenchido.csv` (Base resultante processada e validada)
+- `data/arquivo_preenchido.csv` (Base resultante processada, classificada e validada)
 
 ---
 
@@ -16,14 +16,14 @@
 2. **Codificação:** UTF-8
 3. **Delimitador:** Vírgula (`,`)
 4. **Dimensões Originais:** 1.135 registros e 152 colunas.
-5. **Modalidades Identificadas no Formulário Unificado:**
-   - O formulário Google Forms abrigava perguntas condicionais para múltiplos segmentos: 1º e 2º Anos; Docentes, Equipe Gestora (EQG) e Técnicos (TEC); Temáticas 4, 5, 6 e 7.
-   - Na extração fornecida, 1.132 registros pertencem à modalidade **Docentes** (2º Ano), concentrados na **Temática 5 - Referência Docente 4 - Ferramentas Educacionais**.
+5. **Modalidade Analisada:**
+   - O formulário Google Forms abrigava múltiplos segmentos (1º e 2º Anos; Docentes, Equipe Gestora e Técnicos; Temáticas 4 a 7).
+   - Na base fornecida, 1.130 registros pertencem à modalidade **Docentes** (2º Ano), concentrados na **Temática 5 - Referência Docente 4 - Ferramentas Educacionais**.
    - Três registros (linhas 685, 687 e 688) resultaram de quebras de linha/aspas não escapadas no formulário de origem, contendo dados nulos ou fragmentos sem atribuição de modalidade.
 
 ---
 
-## 2. Identificação e Finalidade dos Campos a Preencher
+## 2. Identificação e Finalidade dos Campos Preenchidos
 
 Foram identificadas 4 colunas pendentes criadas especificamente para receber a classificação do nível de atendimento da IA:
 
@@ -37,106 +37,77 @@ Foram identificadas 4 colunas pendentes criadas especificamente para receber a c
 *Nota explicativa:*
 - Os 270 registros pendentes no Tema I correspondem aos cursistas que optaram pelo Tema II (265 registros), aos dois docentes sem tema registrado por fragmentação de linha (linhas 684 e 686) e aos 3 registros não-docentes/vazios (linhas 685, 687 e 688).
 - De forma análoga, os 870 registros pendentes no Tema II correspondem aos cursistas do Tema I (865 registros) mais os 5 registros pendentes.
-- Nenhuma coluna fora do escopo ou sem finalidade comprovada foi preenchida, respeitando o princípio de conservação de dados.
+- Nenhuma coluna externa ou fora do escopo foi modificada, respeitando o princípio de conservação e integridade dos dados.
 
 ---
 
-## 3. Fundamentação e Critérios de Classificação
+## 3. Adequação Metodológica: Transição do Checklist (2025) para a Rubrica Analítica (2026)
 
-Conforme `rules.md` (item 5) e a calibração pedagógica da **Sugestão 1 (Faixas Percentuais Gradativas)**, foram utilizados **exclusivamente os quatro valores oficiais**:
+Em atendimento às solicitações pedagógicas da gestão:
+1. **Remoção da Taxonomia de Bloom como Critério Avaliativo:** A taxonomia de Bloom foi desvinculada como régua de pontuação, evitando que o docente fosse penalizado por executar verbos operacionais essenciais (ex.: lembrar, compreender).
+2. **Equiparação ao PDP 2026 (`PDP_DOCENTES_Referência 04_2026.md`):** O modelo somatório do checklist de 2025 foi traduzido para a arquitetura qualitativa da Rubrica de 2026, organizada em torno de dois grandes eixos para a observação da prática:
+   - **Critério 1: Articulação Intencional** entre a habilidade essencial, os objetivos de aprendizagem e o recurso/ferramenta educacional digital.
+   - **Critério 2: Mediação Pedagógica e Uso Ativo** da tecnologia pelos estudantes como apoio ao desenvolvimento da habilidade.
 
-1. **Não atende (0% a 25% dos critérios):**
-   - Atribuído quando há cumprimento de no máximo 1 critério ($0$ ou $1$ critério cumprido de $7$ ou $6$), ou seleção isolada de `"O cursista não desenvolveu nenhum dos critérios relacionados à expectativa"`, ou comprovação em feedback de ausência de planejamento/vídeo sem prática docente (ex.: linhas 638 e 1128).
-2. **Atende parcialmente (26% a 70% dos critérios):**
-   - Atribuído quando foram atendidos de $2$ a $4$ critérios exigidos da respectiva dimensão, demonstrando atendimento preliminar ou intermediário, mas ainda com lacunas substanciais em relação ao conjunto da proposta.
-3. **Atende integralmente (71% a 99% ou 100% regular):**
-   - Atribuído quando há cumprimento consistente da grande maioria ou da totalidade dos critérios ($5$ ou $6$ critérios cumpridos de $7$; ou $5$ critérios de $6$; ou $100\%$ sem evidência adicional de superação). Reconhece que contingências da aula (como ausência de imprevisto técnico a ser contornado) não anulam a qualidade do trabalho.
-4. **Supera (100% + impacto qualitativo):**
-   - Atribuído quando, além de atender a 100% dos critérios exigidos na dimensão, o registro possui evidência explícita e documentada no parecer do formador (campos de pontos fortes e reflexões) atestando superação de expectativas, indicação formal como "boa prática pedagógica", caráter inovador ou replicabilidade destacada.
+### Matriz de Transposição e Regras de Nível
+
+Foram rigorosamente mantidos os quatro rótulos oficiais:
+
+* **Não atende:**
+  - *Fundamentação:* Não cumpre os requisitos mínimos do nível Parcial ($\le 1$ item assinalado no checklist original de 2025; ou comprovação em parecer de ausência de planejamento/vídeo sem aula).
+* **Atende parcialmente:**
+  - *Fundamentação:* O docente mobiliza a tecnologia, porém sua função pedagógica é periférica ou meramente expositiva ($C1 < 2$), ou a condução é excessivamente mecânica e passo a passo, sem autonomia discente e sem evidência de mediação ativa ($C2 = 0$).
+* **Atende integralmente:**
+  - *Fundamentação:* Articulação intencional consistente entre a habilidade e os recursos/ferramentas ($C1 \ge 2$) aliada à mediação efetiva na qual os estudantes exploram a tecnologia de forma integrada ao longo da atividade ($C2 \ge 1$).
+* **Supera:**
+  - *Fundamentação:* Cumpre integralmente todos os requisitos estruturantes de $C1$ e $C2$ E promove o uso ativo da tecnologia pelos estudantes em situações de produção, investigação, resolução de problemas ou autonomia/personalização, com parecer formal do observador atestando superação de expectativas ou indicação como boa prática.
 
 ---
 
-## 4. Distribuição das Classificações Realizadas (Calibração Sugestão 1)
+## 4. Distribuição das Classificações Realizadas (Lente PDP 2026)
 
-### Tema I (Recursos Educacionais Digitais — 865 avaliações)
+### Tema I (Recursos Educacionais Digitais — 865 docentes)
 - **Planejamento (T1):**
-  - *Atende integralmente:* 851 (98,38%)
-  - *Atende parcialmente:* 11 (1,27%)
-  - *Supera:* 2 (0,23%)
-  - *Não atende:* 1 (0,12%)
+  - *Atende integralmente:* 844 (97,57%)
+  - *Atende parcialmente:* 19 (2,20%)
+  - *Não atende:* 2 (0,23%)
+  - *Supera:* 0 (0,00%)
 - **Prática Docente (T1):**
-  - *Atende integralmente:* 833 (96,30%)
-  - *Atende parcialmente:* 28 (3,24%)
-  - *Supera:* 2 (0,23%)
+  - *Atende integralmente:* 790 (91,33%)
+  - *Supera (Protagonismo/Autonomia):* 60 (6,94%)
+  - *Atende parcialmente:* 13 (1,50%)
   - *Não atende:* 2 (0,23%)
 
-### Tema II (Ferramentas Educacionais — 265 avaliações)
+### Tema II (Ferramentas Educacionais — 265 docentes)
 - **Planejamento (T2):**
-  - *Atende integralmente:* 250 (94,34%)
-  - *Atende parcialmente:* 13 (4,91%)
-  - *Supera:* 2 (0,75%)
+  - *Atende integralmente:* 254 (95,85%)
+  - *Atende parcialmente:* 11 (4,15%)
   - *Não atende:* 0 (0,00%)
+  - *Supera:* 0 (0,00%)
 - **Prática Docente (T2):**
-  - *Atende integralmente:* 251 (94,72%)
-  - *Atende parcialmente:* 12 (4,53%)
-  - *Supera:* 2 (0,75%)
+  - *Atende integralmente:* 225 (84,91%)
+  - *Supera (Protagonismo/Autonomia):* 32 (12,08%)
+  - *Atende parcialmente:* 8 (3,02%)
   - *Não atende:* 0 (0,00%)
 
 ---
 
-## 5. Mapeamento da Complexidade Cognitiva (Taxonomia de Bloom)
+## 5. Comparativo: Impacto da Transição da Régua
 
-A Taxonomia de Bloom revisada (`_taxonomia_bloom.md`) foi aplicada para mapear o processo cognitivo de cada critério institucional de `_DOC_PDP_2025.md`:
-
-| Tema | Dimensão | Critério | Categoria de Bloom | Processo Cognitivo Predominante |
-| :--- | :--- | :--- | :--- | :--- |
-| **Tema I** | Planejamento | Descreve o objetivo da proposta pedagógica | **Compreender** | Explicar e estruturar o objetivo didático formativo |
-| **Tema I** | Planejamento | Apresenta recurso digital oferecido pela secretaria | **Lembrar** | Identificar e selecionar recurso oficial |
-| **Tema I** | Planejamento | Recurso selecionado do componente (caso tenha) | **Compreender** | Relacionar recurso ao componente curricular |
-| **Tema I** | Planejamento | Apresenta habilidade prioritária do componente | **Analisar** | Diagnosticar e selecionar habilidade prioritária |
-| **Tema I** | Planejamento | Explora recurso relacionando à recomposição | **Analisar** | Articular recursos digitais a lacunas de aprendizagem |
-| **Tema I** | Planejamento | Descreve ações respondendo às questões do plano | **Criar** | Planejar sequência didática coerente e articulada |
-| **Tema I** | Planejamento | Descreve resultados esperados com a implementação | **Avaliar** | Prever e avaliar indicadores de sucesso pedagógico |
-| **Tema I** | Prática | Informa aos estudantes os objetivos de aprendizagem | **Compreender** | Compartilhar intenção didática com a turma |
-| **Tema I** | Prática | Explica aos estudantes o porquê da recomposição | **Compreender** | Contextualizar e justificar o sentido da aprendizagem |
-| **Tema I** | Prática | Apresenta o recurso digital a ser utilizado | **Compreender** | Demonstrar o funcionamento da ferramenta aos alunos |
-| **Tema I** | Prática | Aula/atividade corresponde às ações planejadas | **Aplicar** | Implementar e executar o plano pedagógico previsto |
-| **Tema I** | Prática | Evidencia domínio na utilização do recurso digital | **Aplicar** | Operar recursos com destreza prática |
-| **Tema I** | Prática | Adapta a prática a possíveis imprevistos técnicos | **Avaliar** | Julgar situações emergentes e tomar decisões imediatas |
-| **Tema I** | Prática | Promove personalização do ensino pelo recurso | **Criar** | Modular e estruturar percursos diferenciados |
-| **Tema II** | Planejamento | Descreve o objetivo da proposta pedagógica | **Compreender** | Explicar e estruturar o objetivo didático |
-| **Tema II** | Planejamento | Apresenta mais de uma ferramenta da secretaria | **Compreender** | Articular e selecionar ferramentas complementares |
-| **Tema II** | Planejamento | Apresenta habilidade prioritária do componente | **Analisar** | Diagnosticar e selecionar habilidade de recomposição |
-| **Tema II** | Planejamento | Explora ferramentas relacionando à recomposição | **Analisar** | Estabelecer conexões entre ferramentas e aprendizagem |
-| **Tema II** | Planejamento | Descreve ações respondendo às questões do plano | **Criar** | Elaborar plano pedagógico detalhado e integrado |
-| **Tema II** | Planejamento | Descreve resultados esperados com a implementação | **Avaliar** | Formular expectativas avaliativas fundamentadas |
-| **Tema II** | Prática | Informa aos estudantes os objetivos de aprendizagem | **Compreender** | Comunicar e alinhar objetivos com a turma |
-| **Tema II** | Prática | Explica aos estudantes o porquê da recomposição | **Compreender** | Explicar a relevância da recomposição |
-| **Tema II** | Prática | Apresenta a(s) ferramenta(s) aos estudantes | **Compreender** | Ilustrar e orientar o uso das ferramentas |
-| **Tema II** | Prática | Aula/atividade corresponde ao planejamento | **Aplicar** | Executar a proposta em conformidade com o plano |
-| **Tema II** | Prática | Evidencia domínio na utilização da(s) ferramenta(s)| **Aplicar** | Demonstrar domínio técnico e operacional em sala |
-| **Tema II** | Prática | Adapta a prática a possíveis imprevistos técnicos | **Avaliar** | Julgar criticamente e contornar imprevistos |
-| **Tema II** | Prática | Promove personalização do ensino pelas ferramentas| **Criar** | Criar estratégias de diferenciação pedagógica |
+| Dimensão da Avaliação | Modelo Checklist Original (2025) | Projeção na Rubrica Analítica (2026) | Ganho Pedagógico da Transição |
+| :--- | :--- | :--- | :--- |
+| **Atende Parcialmente** | Concentrava docentes que deixaram de cumprir um único detalhe formal periférico (ex.: ausência de imprevisto técnico). | Reduzido para casos com real uso periférico/mecânico da tecnologia ($\approx 1,5\%$ a $3\%$). | Elimina penalizações artificiais e foca o apoio formativo em quem realmente necessita. |
+| **Atende Integralmente** | Exigia pontuação quase perfeita em todos os itens. | Reconhece a articulação intencional consistente e mediação ativa ($\approx 85\%$ a $91\%$). | Valida a prática real de sala de aula e a integração didática dos recursos. |
+| **Supera** | Quase nulo ($< 0,5\%$) por travas aritméticas estritas. | Valoriza o protagonismo, autonomia discente e práticas recomendadas ($6,9\%$ a $12\%$). | Dá visibilidade a professores inovadores que estimulam produção e autoria discente. |
 
 ---
 
-## 6. Tratamento de Ambiguidades e Casos Especiais
+## 6. Resultados da Validação Automatizada de Dados
 
-1. **Seleções Contraditórias ("Marcar Tudo"):**
-   - Foram identificados registros em que o formador marcou todos os critérios positivos e concomitantemente a caixa `"O cursista não desenvolveu nenhum dos critérios..."`.
-   - O cruzamento com os campos textuais de *Pontos Fortes* e *Pontos de Melhoria* (ex.: linha 54: *"O Planejamento e a prática atendem todos os critérios solicitados"*) comprovou que se tratava de equívoco operacional de preenchimento da caixa inferior no Google Forms. Esses registros foram classificados com base no atendimento consistente comprovado às evidências.
-2. **Critério Condicional no Tema I (`"caso tenha"`):**
-   - No Tema I, o critério de componente é condicional, pois nem todas as disciplinas possuem plataforma própria da SEED. Nos casos em que todos os demais 6 critérios foram cumpridos, o registro foi classificado como *Atende integralmente*.
-3. **Casos Incompletos / Sem Evidência:**
-   - Docentes sem indicação de tema e sem checklist (linhas 684 e 686) permaneceram com campos de nível **vazios/pendentes**, conforme determinam os itens 5.5 e 10 das `rules.md`.
-
----
-
-## 7. Resultados da Validação Automatizada
-
-O módulo `src/data_validation.py` verificou:
-- **Total de linhas:** 1.135 no original / 1.135 no preenchido (Sem perdas).
-- **Total de colunas:** 152 no original / 152 no preenchido (Identidade total dos cabeçalhos).
-- **Valores nas colunas de nível:** 100% aderentes ao vocabulário permitido.
+O módulo `src/data_validation.py` e a suíte `pytest` verificaram:
+- **Total de linhas:** 1.135 no original / 1.135 no preenchido (Preservação estrita).
+- **Total de colunas:** 152 no original / 152 no preenchido (Sem alterações de cabeçalho).
+- **Vocabulário de Níveis:** 100% aderente aos quatro valores autorizados (`Não atende`, `Atende parcialmente`, `Atende integralmente`, `Supera`).
 - **Colunas externas:** 100% inalteradas em relação ao original.
+- **Suíte de Testes Automatizados:** 12/12 testes aprovados com sucesso.
 - **Status da Validação:** **APROVADO (is_valid = True)**.

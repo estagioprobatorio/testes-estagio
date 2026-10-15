@@ -72,44 +72,92 @@ def classify_dataset():
         'promove uma personalização do ensino a partir do trabalho com a ferramenta educacional escolhida'
     ]
 
-    supera_patterns = [
+    # Mapeamento dos Eixos da Rubrica 2026 para a Prática Docente
+    c1_articulacao_items = [
+        'informa aos estudantes os objetivos de aprendizagem',
+        'explica aos estudantes o porquê da aula',
+        'apresenta aos estudantes o recurso',
+        'apresenta aos estudantes a(s) ferramenta',
+        'a aula e/ou atividade corresponde à descrição das ações presentes no planejamento'
+    ]
+
+    c2_mediacao_items = [
+        'evidencia-se o domínio do professor',
+        'adapta a prática a possíveis imprevistos técnicos',
+        'promove uma personalização do ensino'
+    ]
+
+    supera_rubrica_2026_patterns = [
         'supera as expectativas', 'superou as expectativas',
         'supera a expectativa', 'superou a expectativa',
         'digna de indicação como boa prática', 'digna de indicacao como boa pratica',
-        'indicação como boa prática', 'indicacao como boa pratica'
+        'indicação como boa prática', 'indicacao como boa pratica',
+        'autonomia', 'protagonismo', 'produção dos estudantes', 'investigação', 'colaboração', 'inovador'
     ]
 
-    def is_supera(pf_val, ref_val):
+    def is_supera_2026(pf_val, ref_val):
         comb = (str(pf_val) + ' ' + str(ref_val)).lower()
-        return any(p in comb for p in supera_patterns)
+        return any(p in comb for p in supera_rubrica_2026_patterns)
 
-    def classify_eval(val, criteria_list, cond_item=None, supera_flag=False):
+    def classify_rubrica_2026(val, is_pratica=True, supera_flag=False):
         """
-        Classificação por Faixas Percentuais Gradativas (Sugestão 1):
-        - Não atende (0% a 25%): 0 a 1 critério atendido ou ausência comprovada.
-        - Atende parcialmente (26% a 70%): 2 a 4 critérios atendidos.
-        - Atende integralmente (71% a 99% ou 100% regular): 5 a 6 critérios (ou 100% sem evidência extra de superação).
-        - Supera (100% + impacto): 100% dos critérios cumpridos com evidência explícita de superação/boa prática.
+        Classificação adaptada à Rubrica Analítica do PDP 2026 (Referência 04):
+        
+        1. PLANEJAMENTO:
+           - Não atende: 0 a 1 elemento estruturante.
+           - Atende parcialmente: 2 a 3 elementos (planejamento fragmentado).
+           - Atende integralmente: 4 a 6 elementos (planejamento estruturado e articulado).
+           - Supera: Planejamento integral com evidência de proposta inovadora ou replicável.
+           
+        2. PRÁTICA DOCENTE (Rubrica 2026 - Critérios 1 e 2):
+           - Não atende: Não cumpre os requisitos mínimos do nível Parcial (<= 1 item cumprido ou recusa/sem aula).
+           - Atende parcialmente: Função pedagógica periférica/expositiva ou condução passo a passo sem autonomia discente.
+           - Atende integralmente: Articulação intencional consistente (Critério 1) e mediação com exploração ativa pelos estudantes (Critério 2).
+           - Supera: Cumpre todos os requisitos do Atende Integralmente E promove uso ativo da tecnologia pelos estudantes em produção, investigação, resolução de problemas ou personalização autônoma.
         """
         if not isinstance(val, str) or not val.strip():
             return None
         val_lower = val.lower()
         
-        # Contagem de critérios atendidos
-        cnt = sum(1 for c in criteria_list if c in val_lower)
-        total = len(criteria_list)
-        pct = cnt / total
+        if not is_pratica:
+            plan_req = [
+                'descreve o objetivo da proposta pedagógica',
+                'habilidade prioritária',
+                'relacionando-o à recomposição',
+                'relacionando-as à recomposição',
+                'descreve as ações a serem realizadas',
+                'descreve os resultados esperados'
+            ]
+            cnt = sum(1 for c in plan_req if c in val_lower)
+            if cnt <= 1:
+                return 'Não atende'
+            elif cnt <= 3:
+                return 'Atende parcialmente'
+            elif cnt <= 5:
+                return 'Atende integralmente'
+            else:
+                return 'Supera' if supera_flag else 'Atende integralmente'
         
-        if cnt <= 1:
+        # Avaliação da Prática via Rubrica 2026 (Critério 1 e Critério 2)
+        c1_count = sum(1 for c in c1_articulacao_items if c in val_lower)
+        c2_count = sum(1 for c in c2_mediacao_items if c in val_lower)
+        has_personalizacao = 'promove uma personalização do ensino' in val_lower
+        total_items = c1_count + c2_count
+        
+        # NÃO ATENDE
+        if total_items <= 1 or (c1_count == 0 and c2_count == 0):
             return 'Não atende'
-        elif pct <= 0.70:
+            
+        # ATENDE PARCIALMENTE: uso pontual, expositivo ou sem mediação/autonomia
+        if c1_count < 2 or c2_count == 0:
             return 'Atende parcialmente'
-        elif pct < 1.0:
-            return 'Atende integralmente'
-        else: # 100% dos critérios cumpridos
-            if supera_flag:
-                return 'Supera'
-            return 'Atende integralmente'
+            
+        # SUPERA (Critérios 1 e 2 de 2026): cumpre integralmente E promove uso ativo/autonomia/produção discente
+        if c1_count >= 3 and c2_count >= 2 and has_personalizacao and supera_flag:
+            return 'Supera'
+            
+        # ATENDE INTEGRALMENTE
+        return 'Atende integralmente'
 
     # Identificação das colunas
     col_mod = df.columns[33]      # 2º ANO - Selecione a modalidade do cursista
@@ -151,11 +199,11 @@ def classify_dataset():
         tema = df.at[idx, col_tema]
         pf = df.at[idx, col_pf]
         ref = df.at[idx, col_ref]
-        sup = is_supera(pf, ref)
+        sup = is_supera_2026(pf, ref)
         
         if tema == 'Tema I':
-            c_plan = classify_eval(df.at[idx, col_t1_plan_src], t1_criteria_plan, None, sup)
-            c_prat = classify_eval(df.at[idx, col_t1_prat_src], t1_prat_all, None, sup)
+            c_plan = classify_rubrica_2026(df.at[idx, col_t1_plan_src], is_pratica=False, supera_flag=sup)
+            c_prat = classify_rubrica_2026(df.at[idx, col_t1_prat_src], is_pratica=True, supera_flag=sup)
             if c_plan:
                 df.at[idx, col_t1_plan_dst] = c_plan
                 counts['T1_Plan'][c_plan] += 1
@@ -163,8 +211,8 @@ def classify_dataset():
                 df.at[idx, col_t1_prat_dst] = c_prat
                 counts['T1_Prat'][c_prat] += 1
         elif tema == 'Tema II':
-            c_plan = classify_eval(df.at[idx, col_t2_plan_src], t2_plan_all, None, sup)
-            c_prat = classify_eval(df.at[idx, col_t2_prat_src], t2_prat_all, None, sup)
+            c_plan = classify_rubrica_2026(df.at[idx, col_t2_plan_src], is_pratica=False, supera_flag=sup)
+            c_prat = classify_rubrica_2026(df.at[idx, col_t2_prat_src], is_pratica=True, supera_flag=sup)
             if c_plan:
                 df.at[idx, col_t2_plan_dst] = c_plan
                 counts['T2_Plan'][c_plan] += 1
