@@ -119,19 +119,15 @@ def main():
     dim_options = ["Todas", "Planejamento", "Prática"]
     selected_dim = st.sidebar.selectbox("Dimensão de Avaliação:", dim_options)
 
-    # Filtro 3: Categoria Bloom
-    bloom_options = ["Todas"] + ["Lembrar", "Compreender", "Aplicar", "Analisar", "Avaliar", "Criar"]
-    selected_bloom = st.sidebar.selectbox("Categoria Taxonomia de Bloom:", bloom_options)
-
-    # Filtro 4: Nível de Atendimento
+    # Filtro 3: Nível de Atendimento
     nivel_options = ["Todos", "Atende integralmente", "Atende parcialmente", "Supera", "Não atende", "Pendente"]
     selected_nivel = st.sidebar.selectbox("Nível de Atendimento:", nivel_options)
 
-    # Filtro 5: Situação do Preenchimento
+    # Filtro 4: Situação do Preenchimento
     sit_options = ["Todas", "Classificado", "Pendente"]
     selected_sit = st.sidebar.selectbox("Situação do Preenchimento:", sit_options)
 
-    # Filtro 6: Busca textual
+    # Filtro 5: Busca textual
     search_query = st.sidebar.text_input("Busca por texto (critério/expectativa):", "").strip().lower()
 
     # Aplicação dos filtros sobre os metadados dos critérios
@@ -140,8 +136,6 @@ def main():
         filtered_meta = filtered_meta[filtered_meta['tema'] == selected_tema]
     if selected_dim != "Todas":
         filtered_meta = filtered_meta[filtered_meta['dimensao'] == selected_dim]
-    if selected_bloom != "Todas":
-        filtered_meta = filtered_meta[filtered_meta['categoria_bloom'] == selected_bloom]
     if search_query:
         filtered_meta = filtered_meta[
             filtered_meta['criterio'].str.lower().str.contains(search_query) |
@@ -180,9 +174,8 @@ def main():
     m5.metric("Classificações Pendentes", f"{pendentes_count}")
 
     # Divisão em abas temáticas para visualização organizada
-    tab1, tab2, tab3, tab4 = st.tabs([
-        "🏛️ Análise por Tema",
-        "🧠 Taxonomia de Bloom",
+    tab1, tab2, tab3 = st.tabs([
+        "🏛️ Análise por Tema e Critérios",
         "🎯 Níveis de Atendimento",
         "📋 Tabela Detalhada & Dados"
     ])
@@ -231,97 +224,21 @@ def main():
                 st.markdown(f"**Expectativa Institucional Oficial:**\n> {meta_tema.iloc[0]['expectativa']}")
                 st.markdown("**Critérios de Avaliação:**")
                 
-                t_cols = ['id_criterio', 'dimensao', 'criterio', 'categoria_bloom', 'processo_cognitivo']
+                t_cols = ['id_criterio', 'dimensao', 'criterio']
                 st.dataframe(
                     meta_tema[t_cols].rename(columns={
                         'id_criterio': 'ID',
                         'dimensao': 'Dimensão',
-                        'criterio': 'Critério Institucional',
-                        'categoria_bloom': 'Categoria de Bloom',
-                        'processo_cognitivo': 'Processo Cognitivo Analisado'
+                        'criterio': 'Critério Institucional'
                     }),
                     hide_index=True,
                     use_container_width=True
                 )
 
     # -------------------------------------------------------------
-    # SEÇÃO D: ANÁLISE DA TAXONOMIA DE BLOOM
+    # SEÇÃO D: NÍVEIS DE ATENDIMENTO
     # -------------------------------------------------------------
     with tab2:
-        st.markdown("### Complexidade Cognitiva dos Critérios (Taxonomia de Bloom Revisada)")
-        
-        # Advertência obrigatória conforme item 2.3.D
-        st.markdown("""
-        <div class="warning-card">
-            <strong>⚠️ Nota Metodológica Obrigatória:</strong> A Taxonomia de Bloom representa a 
-            <strong>complexidade cognitiva dos processos exigidos</strong>, e não uma escala de qualidade docente, mérito, 
-            desempenho ou eficácia pedagógica. Uma proposta em <em>Criar</em> não é automaticamente superior a uma proposta em <em>Compreender</em> ou <em>Aplicar</em>; 
-            o processo cognitivo adequado é aquele que responde à intencionalidade formativa e à expectativa do critério.
-        </div>
-        """, unsafe_allow_html=True)
-
-        col_b1, col_b2 = st.columns([1, 1])
-        bloom_order = ["Lembrar", "Compreender", "Aplicar", "Analisar", "Avaliar", "Criar"]
-        bloom_colors = {
-            "Lembrar": "#9CA3AF",
-            "Compreender": "#60A5FA",
-            "Aplicar": "#34D399",
-            "Analisar": "#FBBF24",
-            "Avaliar": "#F87171",
-            "Criar": "#A78BFA"
-        }
-
-        with col_b1:
-            # Distribuição geral dos critérios por categoria
-            b_counts = filtered_meta['categoria_bloom'].value_counts().reindex(bloom_order).fillna(0).reset_index()
-            b_counts.columns = ['Categoria de Bloom', 'Quantidade de Critérios']
-            
-            fig_bloom = px.bar(
-                b_counts,
-                x='Categoria de Bloom',
-                y='Quantidade de Critérios',
-                color='Categoria de Bloom',
-                color_discrete_map=bloom_colors,
-                title="Distribuição dos Critérios por Nível Cognitivo Predominante"
-            )
-            fig_bloom.update_layout(template="plotly_white", showlegend=False)
-            st.plotly_chart(fig_bloom, use_container_width=True)
-
-        with col_b2:
-            # Comparação entre Planejamento e Prática
-            b_dim = filtered_meta.groupby(['categoria_bloom', 'dimensao']).size().reset_index(name='qtd')
-            fig_b_dim = px.bar(
-                b_dim,
-                x='categoria_bloom',
-                y='qtd',
-                color='dimensao',
-                barmode='group',
-                category_orders={'categoria_bloom': bloom_order},
-                color_discrete_map={'Planejamento': '#2563EB', 'Prática': '#10B981'},
-                title="Comparativo Cognitivo: Planejamento vs. Prática",
-                labels={'categoria_bloom': 'Categoria Cognitiva', 'qtd': 'Critérios', 'dimensao': 'Dimensão'}
-            )
-            fig_b_dim.update_layout(template="plotly_white")
-            st.plotly_chart(fig_b_dim, use_container_width=True)
-
-        st.markdown("#### Matriz Cognitiva de Critérios")
-        st.dataframe(
-            filtered_meta[['id_criterio', 'tema', 'dimensao', 'categoria_bloom', 'criterio', 'processo_cognitivo']].rename(columns={
-                'id_criterio': 'Código',
-                'tema': 'Tema',
-                'dimensao': 'Dimensão',
-                'categoria_bloom': 'Categoria Bloom',
-                'criterio': 'Texto do Critério',
-                'processo_cognitivo': 'Operação Mental Exigida'
-            }),
-            hide_index=True,
-            use_container_width=True
-        )
-
-    # -------------------------------------------------------------
-    # SEÇÃO E: NÍVEIS DE ATENDIMENTO
-    # -------------------------------------------------------------
-    with tab3:
         st.markdown("### Avaliação dos Níveis de Atendimento Institucional")
         
         st.markdown("""
@@ -385,9 +302,9 @@ def main():
             st.dataframe(summary_table, hide_index=True, use_container_width=True)
 
     # -------------------------------------------------------------
-    # SEÇÃO F: TABELA DETALHADA
+    # SEÇÃO E: TABELA DETALHADA
     # -------------------------------------------------------------
-    with tab4:
+    with tab3:
         st.markdown("### Registros Filtrados da Modalidade DOCENTE")
         st.markdown("Consulta interativa com capacidade de ordenação, pesquisa e rastreamento da base de dados original.")
 

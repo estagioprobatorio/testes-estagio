@@ -17,8 +17,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'Descreve o objetivo da proposta pedagógica',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Explicar e estruturar a intencionalidade didática da proposta pedagógica'
     },
     {
         'id_criterio': 'T1_PL_02',
@@ -27,8 +25,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'A proposta pedagógica apresenta um recurso educacional digital oferecido pela secretaria',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Lembrar',
-        'processo_cognitivo': 'Reconhecer e selecionar recurso educacional digital oficial'
     },
     {
         'id_criterio': 'T1_PL_03',
@@ -37,8 +33,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'O recurso educacional digital selecionado do seu componente, caso tenha',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Classificar e relacionar a ferramenta digital ao componente curricular'
     },
     {
         'id_criterio': 'T1_PL_04',
@@ -47,8 +41,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'A proposta apresenta para a recomposição uma habilidade prioritária de seu componente',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Analisar',
-        'processo_cognitivo': 'Diagnosticar e selecionar habilidade prioritária a partir de dados de defasagem'
     },
     {
         'id_criterio': 'T1_PL_05',
@@ -57,8 +49,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'A proposta de planejamento explora o recurso educacional digital relacionando-o à recomposição das aprendizagens',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Analisar',
-        'processo_cognitivo': 'Articular o uso da plataforma digital com a superação de lacunas de aprendizagem'
     },
     {
         'id_criterio': 'T1_PL_06',
@@ -67,8 +57,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'Descreve as ações a serem realizadas na implementação da prática respondendo a todas as questões do planejamento',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Criar',
-        'processo_cognitivo': 'Estruturar e planejar uma sequência didática articulada e completa'
     },
     {
         'id_criterio': 'T1_PL_07',
@@ -77,8 +65,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'Descreve os resultados esperados com a implementação do planejamento',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Avaliar',
-        'processo_cognitivo': 'Formular metas avaliativas e critérios de verificação do sucesso pedagógico'
     },
 
     # TEMA I - PRÁTICA
@@ -89,8 +75,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Informa aos estudantes os objetivos de aprendizagem da proposta pedagógica',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Comunicar e esclarecer aos alunos o sentido e o objetivo da aprendizagem'
     },
     {
         'id_criterio': 'T1_PR_02',
@@ -99,8 +83,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Explica aos estudantes o porquê da aula e/ou atividade voltada para a recomposição',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Contextualizar a relevância e o propósito da recomposição formativa'
     },
     {
         'id_criterio': 'T1_PR_03',
@@ -109,8 +91,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Apresenta aos estudantes o recurso educacional digital que será utilizado durante aula e/ou atividade',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Apresentar e demonstrar o funcionamento do recurso tecnológico aos alunos'
     },
     {
         'id_criterio': 'T1_PR_04',
@@ -119,8 +99,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'A aula e/ou atividade corresponde à descrição das ações presentes no planejamento',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Aplicar',
-        'processo_cognitivo': 'Executar e implementar as ações didáticas em conformidade com o plano elaborado'
     },
     {
         'id_criterio': 'T1_PR_05',
@@ -129,8 +107,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Evidencia-se o domínio do professor na utilização do recurso educacional digital utilizado',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Aplicar',
-        'processo_cognitivo': 'Operar com destreza prática e segurança instrumental a ferramenta tecnológica'
     },
     {
         'id_criterio': 'T1_PR_06',
@@ -139,8 +115,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Adapta a prática a possíveis imprevistos técnicos que possam ocorrer',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Avaliar',
-        'processo_cognitivo': 'Julgar a situação de imprevisto técnico e tomar decisões corretivas adequadas'
     },
     {
         'id_criterio': 'T1_PR_07',
@@ -149,8 +123,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Promove uma personalização do ensino a partir do trabalho com o recurso educacional escolhido',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando um recurso educacional digital como apoio pedagógico.',
-        'categoria_bloom': 'Criar',
-        'processo_cognitivo': 'Elaborar e modular percursos de aprendizagem personalizados e diferenciados'
     },
 
     # TEMA II - PLANEJAMENTO
@@ -161,8 +133,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'Descreve o objetivo da proposta pedagógica',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Explicar e estruturar o objetivo didático da proposta pedagógica'
     },
     {
         'id_criterio': 'T2_PL_02',
@@ -171,8 +141,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'A proposta pedagógica apresenta mais de uma ferramenta educacional oferecida pela secretaria',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Articular e selecionar ferramentas educacionais complementares da secretaria'
     },
     {
         'id_criterio': 'T2_PL_03',
@@ -181,8 +149,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'A proposta apresenta para a recomposição de um habilidade prioritária de seu componente',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Analisar',
-        'processo_cognitivo': 'Examinar diagnósticos de aprendizagem e selecionar a habilidade prioritária'
     },
     {
         'id_criterio': 'T2_PL_04',
@@ -191,8 +157,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'A proposta de planejamento explora ferramentas educacionais relacionando-as à recomposição das aprendizagens',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Analisar',
-        'processo_cognitivo': 'Estabelecer relações funcionais entre as ferramentas selecionadas e a recomposição'
     },
     {
         'id_criterio': 'T2_PL_05',
@@ -201,8 +165,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'Descreve as ações a serem realizadas na implementação da prática respondendo a todas as questões do planejamento',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Criar',
-        'processo_cognitivo': 'Conceber e detalhar uma proposta pedagógica estruturada de intervenção'
     },
     {
         'id_criterio': 'T2_PL_06',
@@ -211,8 +173,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Planejamento',
         'criterio': 'Descreve os resultados esperados com a implementação do planejamento',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Avaliar',
-        'processo_cognitivo': 'Definir parâmetros avaliativos para julgar os resultados pretendidos da prática'
     },
 
     # TEMA II - PRÁTICA
@@ -223,8 +183,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Informa aos estudantes os objetivos de aprendizagem da proposta pedagógica',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Compartilhar e explicar aos estudantes os objetivos pedagógicos propostos'
     },
     {
         'id_criterio': 'T2_PR_02',
@@ -233,8 +191,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Explica aos estudantes o porquê da aula e/ou atividade voltada para a recomposição',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Construir significado sobre a necessidade formativa da recomposição'
     },
     {
         'id_criterio': 'T2_PR_03',
@@ -243,8 +199,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Apresenta aos estudantes a(s) ferramenta(s) educacional(is) que serão utilizados na aula e/ou atividade',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Compreender',
-        'processo_cognitivo': 'Orientar e apresentar o ecossistema de ferramentas digitais aos alunos'
     },
     {
         'id_criterio': 'T2_PR_04',
@@ -253,8 +207,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'A aula e/ou atividade corresponde à descrição das ações presentes no planejamento',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Aplicar',
-        'processo_cognitivo': 'Implementar em sala de aula o plano pedagógico anteriormente traçado'
     },
     {
         'id_criterio': 'T2_PR_05',
@@ -263,8 +215,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Evidencia-se o domínio do professor,na utilização da(s) ferramenta(s) educacional(is)',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Aplicar',
-        'processo_cognitivo': 'Empregar e operar com destreza as ferramentas educacionais na mediação'
     },
     {
         'id_criterio': 'T2_PR_06',
@@ -273,8 +223,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Adapta a prática a possíveis imprevistos técnicos que possam ocorrer',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Avaliar',
-        'processo_cognitivo': 'Julgar e contornar imprevistos técnicos com alternativas didáticas'
     },
     {
         'id_criterio': 'T2_PR_07',
@@ -283,8 +231,6 @@ CRITERIA_METADATA = [
         'dimensao': 'Prática',
         'criterio': 'Promove uma personalização do ensino a partir do trabalho com a ferramenta educacional escolhida',
         'expectativa': 'Espera-se que o docente desenvolva uma proposta pedagógica de recomposição das aprendizagens com uma habilidade prioritária de seu componente, utilizando duas ou mais ferramentas educacionais.',
-        'categoria_bloom': 'Criar',
-        'processo_cognitivo': 'Estruturar atividades e ritmos customizados para os diferentes perfis discentes'
     }
 ]
 

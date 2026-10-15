@@ -111,10 +111,11 @@ class TestDataFiltering(unittest.TestCase):
     def test_criteria_metadata_completeness(self):
         meta = get_criteria_metadata()
         self.assertEqual(len(meta), 27)  # 14 Tema I + 13 Tema II
-        # Verificar categorias de Bloom permitidas
-        allowed_bloom = {"Lembrar", "Compreender", "Aplicar", "Analisar", "Avaliar", "Criar"}
-        for cat in meta['categoria_bloom']:
-            self.assertIn(cat, allowed_bloom)
+        # Verificar campos obrigatórios dos critérios institucionais
+        mandatory_fields = ['id_criterio', 'tema', 'tema_titulo', 'dimensao', 'criterio', 'expectativa']
+        for field in mandatory_fields:
+            self.assertIn(field, meta.columns)
+        self.assertEqual(len(meta['id_criterio'].unique()), 27)
 
 if __name__ == '__main__':
     unittest.main()
