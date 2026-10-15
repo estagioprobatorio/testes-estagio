@@ -33,15 +33,15 @@ def classify_dataset():
     print(f"[2] CSV original carregado: {initial_rows} linhas, {initial_cols} colunas.")
     
     # Critérios de _DOC_PDP_2025.md
-    t1_plan_req = [
+    t1_criteria_plan = [
         'descreve o objetivo da proposta pedagógica',
         'a proposta pedagógica apresenta um recurso educacional digital oferecido pela secretaria',
+        'o recurso educacional digital selecionado do seu componente, caso tenha',
         'a proposta apresenta para a recomposição uma habilidade prioritária de seu componente',
         'a proposta de planejamento explora o recurso educacional digital relacionando-o à recomposição das aprendizagens',
         'descreve as ações a serem realizadas na implementação da prática respondendo a todas as questões do planejamento',
         'descreve os resultados esperados com a implementação do planejamento'
     ]
-    t1_plan_cond = 'o recurso educacional digital selecionado do seu componente, caso tenha'
 
     t1_prat_all = [
         'informa aos estudantes os objetivos de aprendizagem da proposta pedagógica',
@@ -83,26 +83,33 @@ def classify_dataset():
         comb = (str(pf_val) + ' ' + str(ref_val)).lower()
         return any(p in comb for p in supera_patterns)
 
-    def classify_eval(val, req_list, cond_item=None, supera_flag=False):
+    def classify_eval(val, criteria_list, cond_item=None, supera_flag=False):
+        """
+        Classificação por Faixas Percentuais Gradativas (Sugestão 1):
+        - Não atende (0% a 25%): 0 a 1 critério atendido ou ausência comprovada.
+        - Atende parcialmente (26% a 70%): 2 a 4 critérios atendidos.
+        - Atende integralmente (71% a 99% ou 100% regular): 5 a 6 critérios (ou 100% sem evidência extra de superação).
+        - Supera (100% + impacto): 100% dos critérios cumpridos com evidência explícita de superação/boa prática.
+        """
         if not isinstance(val, str) or not val.strip():
             return None
         val_lower = val.lower()
         
         # Contagem de critérios atendidos
-        req_matches = sum(1 for c in req_list if c in val_lower)
+        cnt = sum(1 for c in criteria_list if c in val_lower)
+        total = len(criteria_list)
+        pct = cnt / total
         
-        # 0 critérios exigidos atendidos indica ausência de atendimento
-        if req_matches == 0:
+        if cnt <= 1:
             return 'Não atende'
-            
-        all_req_met = (req_matches == len(req_list))
-        
-        if all_req_met:
+        elif pct <= 0.70:
+            return 'Atende parcialmente'
+        elif pct < 1.0:
+            return 'Atende integralmente'
+        else: # 100% dos critérios cumpridos
             if supera_flag:
                 return 'Supera'
             return 'Atende integralmente'
-        else:
-            return 'Atende parcialmente'
 
     # Identificação das colunas
     col_mod = df.columns[33]      # 2º ANO - Selecione a modalidade do cursista
@@ -147,7 +154,7 @@ def classify_dataset():
         sup = is_supera(pf, ref)
         
         if tema == 'Tema I':
-            c_plan = classify_eval(df.at[idx, col_t1_plan_src], t1_plan_req, t1_plan_cond, sup)
+            c_plan = classify_eval(df.at[idx, col_t1_plan_src], t1_criteria_plan, None, sup)
             c_prat = classify_eval(df.at[idx, col_t1_prat_src], t1_prat_all, None, sup)
             if c_plan:
                 df.at[idx, col_t1_plan_dst] = c_plan

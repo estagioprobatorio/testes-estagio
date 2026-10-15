@@ -43,42 +43,42 @@ Foram identificadas 4 colunas pendentes criadas especificamente para receber a c
 
 ## 3. Fundamentação e Critérios de Classificação
 
-Conforme `rules.md` (item 5), foram utilizados **exclusivamente os quatro valores oficiais**:
+Conforme `rules.md` (item 5) e a calibração pedagógica da **Sugestão 1 (Faixas Percentuais Gradativas)**, foram utilizados **exclusivamente os quatro valores oficiais**:
 
-1. **Não atende:**
-   - Atribuído quando houve evidência explícita de ausência de cumprimento dos critérios, como a seleção isolada da opção `"O cursista não desenvolveu nenhum dos critérios relacionados à expectativa"` ou comprovação em feedback de ausência de planejamento/vídeo sem prática docente (ex.: linhas 638 e 1128).
-2. **Atende parcialmente:**
-   - Atribuído quando foram atendidos critérios pertinentes, mas sem contemplar integralmente o rol de critérios exigidos pela expectativa institucional (ex.: 1 a $n-1$ critérios atendidos).
-3. **Atende integralmente:**
-   - Atribuído quando todos os critérios da expectativa institucional foram consistentemente contemplados (7/7 na prática de T1 e T2; 6/6 no planejamento de T2; 7/7 ou 6/7 no planejamento de T1 quando o item ausente era condicional `"caso tenha"` para componentes sem plataforma digital específica).
-4. **Supera:**
-   - Atribuído quando, além de atender integralmente a todos os critérios, o registro possui evidência explícita e documentada no feedback do formador (campos de pontos fortes e reflexões) comprovando que a prática pedagógica ultrapassou as expectativas, destacando-se como "boa prática pedagógica", "inovadora" ou com superação atestada.
+1. **Não atende (0% a 25% dos critérios):**
+   - Atribuído quando há cumprimento de no máximo 1 critério ($0$ ou $1$ critério cumprido de $7$ ou $6$), ou seleção isolada de `"O cursista não desenvolveu nenhum dos critérios relacionados à expectativa"`, ou comprovação em feedback de ausência de planejamento/vídeo sem prática docente (ex.: linhas 638 e 1128).
+2. **Atende parcialmente (26% a 70% dos critérios):**
+   - Atribuído quando foram atendidos de $2$ a $4$ critérios exigidos da respectiva dimensão, demonstrando atendimento preliminar ou intermediário, mas ainda com lacunas substanciais em relação ao conjunto da proposta.
+3. **Atende integralmente (71% a 99% ou 100% regular):**
+   - Atribuído quando há cumprimento consistente da grande maioria ou da totalidade dos critérios ($5$ ou $6$ critérios cumpridos de $7$; ou $5$ critérios de $6$; ou $100\%$ sem evidência adicional de superação). Reconhece que contingências da aula (como ausência de imprevisto técnico a ser contornado) não anulam a qualidade do trabalho.
+4. **Supera (100% + impacto qualitativo):**
+   - Atribuído quando, além de atender a 100% dos critérios exigidos na dimensão, o registro possui evidência explícita e documentada no parecer do formador (campos de pontos fortes e reflexões) atestando superação de expectativas, indicação formal como "boa prática pedagógica", caráter inovador ou replicabilidade destacada.
 
 ---
 
-## 4. Distribuição das Classificações Realizadas
+## 4. Distribuição das Classificações Realizadas (Calibração Sugestão 1)
 
 ### Tema I (Recursos Educacionais Digitais — 865 avaliações)
 - **Planejamento (T1):**
-  - *Atende integralmente:* 760 (87,86%)
-  - *Atende parcialmente:* 102 (11,79%)
+  - *Atende integralmente:* 851 (98,38%)
+  - *Atende parcialmente:* 11 (1,27%)
   - *Supera:* 2 (0,23%)
   - *Não atende:* 1 (0,12%)
 - **Prática Docente (T1):**
-  - *Atende integralmente:* 613 (70,87%)
-  - *Atende parcialmente:* 249 (28,79%)
+  - *Atende integralmente:* 833 (96,30%)
+  - *Atende parcialmente:* 28 (3,24%)
   - *Supera:* 2 (0,23%)
-  - *Não atende:* 1 (0,12%)
+  - *Não atende:* 2 (0,23%)
 
 ### Tema II (Ferramentas Educacionais — 265 avaliações)
 - **Planejamento (T2):**
-  - *Atende integralmente:* 231 (87,17%)
-  - *Atende parcialmente:* 32 (12,08%)
+  - *Atende integralmente:* 250 (94,34%)
+  - *Atende parcialmente:* 13 (4,91%)
   - *Supera:* 2 (0,75%)
   - *Não atende:* 0 (0,00%)
 - **Prática Docente (T2):**
-  - *Atende integralmente:* 178 (67,17%)
-  - *Atende parcialmente:* 85 (32,08%)
+  - *Atende integralmente:* 251 (94,72%)
+  - *Atende parcialmente:* 12 (4,53%)
   - *Supera:* 2 (0,75%)
   - *Não atende:* 0 (0,00%)
 
